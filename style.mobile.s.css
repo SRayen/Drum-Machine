@@ -1,0 +1,24 @@
+@media screen and (max-width: 500px) {
+   
+    .btns{
+        min-height: 400px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        background-color: #b3b3b3;
+        
+    }
+     .btn{
+        max-width: 90px;
+        height: 60px;
+        border-radius: 50%;
+        margin-top: 0.5rem;
+            
+    }
+    
+    .card-body{
+        background-color: #e1d8d8;
+        font-size: xx-large;
+        height: 100px;
+    }
+  }

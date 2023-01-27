@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- style css  -->
+    <link rel="stylesheet" href="./style.css">
+    <link
+    rel="stylesheet"  media="only screen and (max-width: 950px)"
+    href="./style.mobile.m.css"
+  />
+  <link
+  rel="stylesheet"  media="only screen and (max-width: 500px)"
+  href="./style.mobile.s.css"
+/>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>Drum Machine</title>
+    <script>
+      // play function
+      function play(str) {
+
+        switch (str) {
+    case "q":
+    case "Q":
+    document.getElementById('display').innerHTML="Cev_H2";
+      break;
+    case "w":
+    case "W":
+    document.getElementById('display').innerHTML="Dsc_Oh";
+      break;
+    case "e":
+    case "E":
+    document.getElementById('display').innerHTML="Heater-1";
+      break;
+    case "a":
+    case "A":
+    document.getElementById('display').innerHTML="Heater-2";
+      break;
+    case "s":
+    case "S":
+    document.getElementById('display').innerHTML="Heater-3";
+      break;
+    case "d":
+    case "D":
+    document.getElementById('display').innerHTML="Heater-4_1";
+      break;
+    case "z":
+    case "Z":
+    document.getElementById('display').innerHTML="Heater-6";
+      break;
+    case "x":
+    case "X":
+    document.getElementById('display').innerHTML="Kick_n_Hat";
+      break;
+    case "c":
+    case "C":
+    document.getElementById('display').innerHTML="RP4_KICK_1";
+      break;
+    default:
+      break;
+  }
+
+
+
+
+        var audio = document.getElementById(str);
+        audio.play();
+      }
+
+      //key press
+      window.document.onkeyup = function (event) {
+  let keystroke = event.key;
+  switch (keystroke) {
+    case "q":
+    case "Q":
+      play("Q");
+      break;
+    case "w":
+    case "W":
+      play("W");
+      break;
+    case "e":
+    case "E":
+      play("E");
+      break;
+    case "a":
+    case "A":
+      play("A");
+      break;
+    case "s":
+    case "S":
+      play("S");
+      break;
+    case "d":
+    case "D":
+      play("D");
+      break;
+    case "z":
+    case "Z":
+      play("Z");
+      break;
+    case "x":
+    case "X":
+      play("X");
+      break;
+    case "c":
+    case "C":
+      play("C");
+      break;
+    default:
+      break;
+  }
+};
+
+//Colors:
+const colors = [
+      "#16a085",
+      "#f6da01",
+      "##ff82b3",
+      "#f39c12",
+      "#e74c3c",
+      "#9b59b6",
+      "#FB6964",
+      "##8ef5e8",
+      "#73A857",
+    ];
+// Change color:
+document.addEventListener("click", myFunction);
+
+function myFunction() {
+    let randColorIndex = Math.floor(Math.random() * colors.length);
+  document.body.style.backgroundColor  = colors[randColorIndex];
+}
+
+    </script>
+  </head>
+  <body>
+    <div class="container" id="drum-machine">
+      <h1 class="text-center">Drum Machine</h1>
+        <div class="card my-3" >
+            <div class="card-body">
+                <div class="text-center" id="display">dis</div>
+            </div>
+        </div>
+
+      <div class="btns">
+
+      <button
+        class="drum-pad btn btn-block btn-primary "
+        id="drum-0"
+        onclick="play('Q')"
+      >
+      Q
+        <audio src="./clip/Cev_H2.mp3" class="clip" id="Q"></audio>
+      </button>
+      
+      <button
+        class="drum-pad btn btn-block btn-primary"
+        id="drum-1"
+        onclick="play('W')"
+      >
+        W
+        <audio src="./clip/Dsc_Oh.mp3" class="clip" id="W"></audio>
+      </button>
+      <button
+        class="drum-pad btn btn-block btn-primary"
+        id="drum-2"
+        onclick="play('E')"
+      >
+        E
+        <audio src="./clip/Heater-1.mp3" class="clip" id="E"></audio>
+      </button>
+      <button
+        class="drum-pad btn btn-block btn-primary"
+        id="drum-3"
+        onclick="play('A')"
+      >
+        A
+        <audio src="./clip/Heater-2.mp3" class="clip" id="A"></audio>
+      </button>
+      <button
+        class="drum-pad btn btn-block btn-primary"
+        id="drum-4"
+        onclick="play('S')"
+      >
+        S
+        <audio src="./clip/Heater-3.mp3" class="clip" id="S"></audio>
+      </button>
+      <button
+        class="drum-pad btn btn-block btn-primary"
+        id="drum-5"
+        onclick="play('D')"
+      >
+        D
+        <audio src="./clip/Heater-4_1.mp3" class="clip" id="D"></audio>
+      </button>
+      <button
+        class="drum-pad btn btn-block btn-primary"
+        id="drum-6"
+        onclick="play('Z')"
+      >
+        Z
+        <audio src="./clip/Heater-6.mp3" class="clip" id="Z"></audio>
+      </button>
+      <button
+        class="drum-pad btn btn-block btn-primary"
+        id="drum-7"
+        onclick="play('X')"
+      >
+        X
+        <audio src="./clip/Kick_n_Hat.mp3" class="clip" id="X"></audio>
+      </button>
+      <button
+        class="drum-pad btn btn-block btn-primary"
+        id="drum-8"
+        onclick="play('C')"
+      >
+        C
+        <audio src="./clip/RP4_KICK_1.mp3" class="clip" id="C"></audio>
+      </button>
+
+      </div>
+
+      
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
